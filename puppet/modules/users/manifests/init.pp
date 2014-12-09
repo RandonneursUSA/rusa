@@ -45,6 +45,7 @@ class users {
     managehome => true,
     shell => "/bin/bash",
     groups => ["sudo"],
+    password => '$6$NEKzlXOx$w.mc1cznXQK8/Cp0Y1SWAPrEFJfMiAgKOGCp0QjlDegx/Y/IYjkj4621YPgLmMRrzhfgyQqOB..jk9ICb23jO.',
   }
 
   file {"/home/iphands":
