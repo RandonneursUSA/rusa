@@ -13,4 +13,5 @@ node /www.rusa.org/ {
     include systools
     include users
     include sudoers
+    include mail
 }
