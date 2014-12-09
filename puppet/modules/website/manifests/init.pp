@@ -8,6 +8,11 @@ class website {
 	ensure => installed,
     }
 
+    # Need this for postback from paypal to work;
+    package {'libwww-perl':
+	ensure => installed,
+    }
+
     package {'uwsgi-plugin-cgi':
 	ensure => installed,
     }
