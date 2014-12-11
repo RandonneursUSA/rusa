@@ -26,7 +26,13 @@ class website {
     }
 
     file { '/etc/nginx/sites-available/default':
-        source => "puppet:///modules/website/default",
+        source => "puppet:///modules/website/etc/nginx/default",
+        owner => "root",
+        group => "root",
+    }
+
+    file { '/etc/nginx/rusa_logo_selection':
+        content => template("website/etc/nginx/rusa_logo_selection"),
         owner => "root",
         group => "root",
     }

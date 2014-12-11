@@ -1,0 +1,8 @@
+
+<% if @fqdn != "www.rusa.org" -%>
+
+location /Images/logorusa.gif {
+    rewrite /Images/logorusa.gif /Images/demo.png redirect;
+}
+
+<% end -%>

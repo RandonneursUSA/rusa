@@ -57,6 +57,8 @@ server {
                  uwsgi_pass 127.0.0.1:9000;
         }
 
+	include rusa_logo_selection;
+
 #	location /doc/ {
 #		alias /usr/share/doc/;
 #		autoindex on;
