@@ -57,7 +57,13 @@ server {
                  uwsgi_pass 127.0.0.1:9000;
         }
 
-	include rusa_logo_selection;
+        <% if @fqdn != "www.rusa.org" -%>
+
+        location /Images/logorusa.gif {
+            rewrite /Images/logorusa.gif /Images/demo.png redirect;
+        }
+
+        <% end -%>
 
 #	location /doc/ {
 #		alias /usr/share/doc/;
