@@ -1,5 +1,6 @@
 
 class website {
+
     package {'nginx':
 	ensure => installed,
     }
@@ -29,11 +30,25 @@ class website {
         content => template("website/etc/nginx/sites-available/default"),
         owner => "root",
         group => "root",
+        notify => Package['nginx'],
     }
 
     file {'/etc/uwsgi/apps-enabled/rusa-cgi.ini':
         source => "puppet:///modules/website/rusa-cgi.ini",
         owner => "root",
         group => "root",
-   }
+        notify => Package['uwsgi'],
+    }
+
+    service { "nginx":
+        ensure => "running",
+        enable => "true",
+        require => Package["nginx"],
+    }
+
+    service {'uwsgi':
+	ensure => "running",
+        enable => "true",
+        require => Package["uwsgi", "uwsgi-plugin-cgi"],
+    }
 }
