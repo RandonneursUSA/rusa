@@ -14,6 +14,11 @@ class website {
 	ensure => installed,
     }
 
+    # This is used to draw dots on the RUSA USA map;
+    package {'imagemagick':
+        ensure => installed,
+    }
+
     package {'uwsgi-plugin-cgi':
 	ensure => installed,
     }
