@@ -5,6 +5,7 @@ node /linode.rusa.org/ {
     include systools
     include users
     include sudoers
+    include site-linode
 }
 
 node /www.rusa.org/ {

@@ -1,0 +1,2 @@
+
+0 1 * * * git /usr/local/bin/backup-gdbm.sh
