@@ -1,7 +1,12 @@
 
 class systools {
     package {'python-dev':
-       ensure => installed,
+        ensure => installed,
+    }
+
+    # So we can decrypt ~git/.ssh/id_rsa.nc;
+    package {'mcrypt':
+        ensure => installed,
     }
 
     exec {'python-fabric':
