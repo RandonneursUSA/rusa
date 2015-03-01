@@ -3,7 +3,7 @@
 cd /tmp
 git clone git@localhost:gdbm
 cd gdbm
-fab dumpdb
+/usr/local/bin/fab dumpdb
 git add data
 git commit -m "`date` dump"
 git push
