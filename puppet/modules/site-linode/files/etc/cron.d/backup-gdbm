@@ -1,2 +1,2 @@
 
-0 1 * * * git /usr/local/bin/backup-gdbm.sh
+0 8 * * * git /usr/local/bin/backup-gdbm.sh
