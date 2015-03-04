@@ -8,5 +8,11 @@ git add data
 git commit -m "`date` dump"
 git push
 
+# Build gdbm files out of the data we just dumped;
+/usr/local/bin/fab loaddb
+
+# Update database files on linode;
+/usr/local/bin/fab deploy_gdbm
+
 cd /tmp
 rm -rf gdbm
