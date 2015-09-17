@@ -1,9 +1,13 @@
 #!/bin/sh
 
-cd /tmp
+set -x
+WORKDIR="/tmp/backup-gdbm.$$"
+
+mkdir $WORKDIR
+cd $WORKDIR
 git clone git@localhost:gdbm
 cd gdbm
-/usr/local/bin/fab dumpdb
+TMPDIR=$WORKDIR /usr/local/bin/fab dumpdb
 git add data
 git commit -m "`date` dump"
 git push
@@ -18,4 +22,4 @@ tools/promote-lynne.py
 /usr/local/bin/fab deploy_gdbm
 
 cd /tmp
-rm -rf gdbm
+rm -rf $WORKDIR
