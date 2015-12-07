@@ -38,6 +38,13 @@ class website {
         notify => Package['nginx'],
     }
 
+    file { '/etc/nginx/htpasswd':
+        source => "puppet:///modules/website/htpasswd",
+        owner => "root",
+        group => "root",
+        notify => Package['nginx'],
+    }
+
     file {'/etc/uwsgi/apps-enabled/rusa-cgi.ini':
         source => "puppet:///modules/website/rusa-cgi.ini",
         owner => "root",
